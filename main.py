@@ -20,9 +20,10 @@ class App(QWidget, Ui_Form):
     def onClick(self):
         self.scene.clear()
         for i in range(4):
+            color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
             x, y = random.randint(0, 100), random.randint(0, 100)
             self.graphicsView.setScene(self.scene)
-            self.scene.addEllipse(x, y, y + 20, y + 20.0, brush=QColor(255, 217, 82))
+            self.scene.addEllipse(x, y, y + 20, y + 20.0, brush=QColor(*color))
 
 
 def except_hook(cls, exception, traceback):
